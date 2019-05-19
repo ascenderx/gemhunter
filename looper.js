@@ -37,7 +37,7 @@ class Looper {
       throw 'Callback is undefined';
     } else if (this._interval === null || this._interval === undefined) {
       throw 'Interval is undefined';
-    } else if (this._window == null || this._window == undefined) {
+    } else if (this._window === null || this._window === undefined) {
       throw 'Window is undefined';
     }
     
