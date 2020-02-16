@@ -31,7 +31,53 @@ class Entity {
     return this._collisionBox;
   }
   
-  isCollidingWidth(entity) {
-    return this._collisionBox.isCollidingWidth(entity._collisionBox);
+  isCollidingWith(entity) {
+    return this._collisionBox.isCollidingWith(entity._collisionBox);
+  }
+  
+  get position() {
+    return this._position;
+  }
+  
+  get velocity() {
+    return this._velocity;
+  }
+  
+  get acceleration() {
+    return this._acceleration;
+  }
+  
+  setX(x) {
+    this._position.x = x;
+  }
+  
+  setY(y) {
+    this._position.y = y;
+  }
+  
+  moveX(dx) {
+    this._velocity.dx = dx;
+  }
+  
+  moveY(dy) {
+    this._velocity.dy = dy;
+  }
+  
+  accelerateX(ddx) {
+    this._acceleration.ddx = ddx;
+  }
+  
+  accelerateY(ddy) {
+    this._acceleration.ddy = ddy;
+  }
+  
+  stopX() {
+    this._velocity.dx = 0;
+    this._acceleration.ddx = 0;
+  }
+  
+  stopY() {
+    this._velocity.dy = 0;
+    this._acceleration.ddy = 0;
   }
 }
