@@ -1,11 +1,10 @@
 class Game {
-  constructor(canvas, win = window) {
+  constructor(canvas) {
     this._canvas = canvas;
-    this._context = this._canvas.getContext('2d');
-    this._window = win;
+    this._context = canvas.getContext('2d');
     
     this._framerate = 50;
-    this._looper = new Looper({
+    this._timer = new FramerateTimer({
       callback: this._tick.bind(this),
       framerate: this._framerate,
     });
@@ -29,6 +28,6 @@ class Game {
   }
   
   run() {
-    this._looper.start();
+    this._timer.start();
   }
 }
