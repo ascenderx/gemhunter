@@ -1,46 +1,19 @@
 class Entity {
-  constructor(kwargs) {
-    let collisionWidth = 0;
-    let collisionHeight = 0;
-    
-    // Parse all keyword arguments.
-    for (let key in kwargs) {
-      let value = kwargs[key];
-      
-      switch (key) {
-        case 'position':
-          this._position = value;
-          break;
-        
-        case 'velocity':
-          this._velocity = value;
-          break;
-        
-        case 'acceleration':
-          this._acceleration = value;
-          break;
-        
-        case 'collisionWidth':
-          collisionWidth = value;
-          break;
-        
-        case 'collisionHeight':
-          collisionHeight = value;
-          break;
-        
-        default:
-          throw `Unknown keyword argument "${key}"`;
-      }
-    }
-    
+  constructor(
+    position,
+    velocity,
+    acceleration,
+    collisionWidth = 0,
+    collisionHeight = 0
+  ) {
     // Set defaults if not specified.
-    if (this._position === undefined) {
+    if (!this._position) {
       this._position = new CartesianPoint2d();
     }
-    if (this._velocity === undefined) {
+    if (!this._velocity) {
       this._velocity = new CartesianVelocity2d();
     }
-    if (this._acceleration === undefined) {
+    if (!this._acceleration) {
       this._acceleration = new CartesianAcceleration2d();
     }
     
