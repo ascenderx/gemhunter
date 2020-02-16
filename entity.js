@@ -6,16 +6,9 @@ class Entity {
     collisionWidth = 0,
     collisionHeight = 0
   ) {
-    // Set defaults if not specified.
-    if (!this._position) {
-      this._position = new CartesianPoint2d();
-    }
-    if (!this._velocity) {
-      this._velocity = new CartesianVelocity2d();
-    }
-    if (!this._acceleration) {
-      this._acceleration = new CartesianAcceleration2d();
-    }
+    this._position = position || new CartesianPoint2d();
+    this._velocity = velocity || new CartesianVelocity2d();
+    this._acceleration = acceleration || new CartesianAcceleration2d();
     
     // Set other members.
     this._collisionBox = new CollisionRectangle(
