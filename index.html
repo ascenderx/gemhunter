@@ -3,25 +3,18 @@
   <head>
     <title>Gem Hunter</title>
     <meta charset="UTF-8"/>
-    <style>
-      * {
-        box-sizing: border-box;
-      }
-      
-      body {
-        margin: 0;
-        padding: 0;
-      }
-    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="styles.css"/>
   </head>
   <body>
-    <canvas id="game-canvas">
-      Your browser does not support the HTML5
-      <code>&lt;canvas&gt;</code> element.
-    </canvas>
+    <div class="canvas-container" id="canvas-container">
+      <canvas id="game-canvas">
+        Your browser does not support the HTML5 <code>&lt;canvas&gt;</code> element.
+      </canvas>
+    </div>
     
     <script src="utils.js"></script>
-    <script src="looper.js"></script>
+    <script src="timer.js"></script>
     <script src="game.js"></script>
     <script src="main.js"></script>
   </body>
