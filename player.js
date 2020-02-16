@@ -1,7 +1,10 @@
 class Player extends Entity {
   constructor(position, velocity, acceleration) {
+    // A negative height will point upward. Therefore, the position of the
+    // player will actually be its bottom-left corner.
     let width = 40;
     let height = -40;
+    
     super(
       position,
       velocity,
