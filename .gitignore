@@ -1,5 +1,6 @@
 # Tiled files
 **/*.tiled-session
+**/*.tiled-project
 
 # VSCode files
 **/.vscode
